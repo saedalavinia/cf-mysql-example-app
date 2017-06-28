@@ -88,7 +88,7 @@ func (h *PutGetHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(statusCode)
-	w.Write([]byte(responseBody))
+	w.Write([]byte(responseBody + "\n"))
 }
 
 type Repository interface {
