@@ -6,7 +6,7 @@ cf api --skip-ssl-validation $CF_API
 cf auth $CF_USERNAME $CF_PASSWORD
 cf target -o $CF_ORG -s $CF_SPACE
 cf create-service $CF_SERVICE_NAME $CF_SERVICE_PLAN mysql-test
-cf push mysql-example-app --no-start -b https://github.com/cloudfoundry/go-buildpack.git
+cf push mysql-example-app --no-start -b https://github.com/cloudfoundry/go-buildpack.git -d ${CF_APP_DOMAIN}
 cf bind-service mysql-example-app mysql-test
 cf start mysql-example-app
 
